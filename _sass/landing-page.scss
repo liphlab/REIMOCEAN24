@@ -56,6 +56,19 @@
 	}
 }
 
+.quote {
+
+	.quote-text-container {
+		width: 800px;
+		text-align: center;
+		font-size: 14px; /* Set your desired font size */
+		p, {
+			text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+		}
+	}
+	
+}
+
 .image {
 	text-align: center;
 }
