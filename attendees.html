@@ -1,6 +1,6 @@
 ---
-title: Speakers
-description: Invited speakers.
+title: Attendees
+description: Invited researchers
 image: /new_imgs/DallE-background-speaker.png
 ---
 
@@ -8,17 +8,17 @@ image: /new_imgs/DallE-background-speaker.png
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
 			<h1 class="editable"><p></p>Invited speakers</h1>
-			<p class="subtext editable">List of confirmed invited speakers</p>
+			<p class="subtext editable">List of confirmed attendees</p>
 		</div>
 	</div>
 </section>
 
 <section class="pad">
 	<div class="container">
-		<p class="editor-link"><a href="cloudcannon:collections/_speakers" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
+		<p class="editor-link"><a href="cloudcannon:collections/_attendees" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
 		<ul class="staff">
 			<!-- <p>This list is being constantly updated. Complete information available soon.</p> -->
-			{% for person in site.speakers %}
+			{% for person in site.attendees %}
 				<li>
 					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>
 					
