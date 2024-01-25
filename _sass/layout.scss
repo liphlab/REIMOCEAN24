@@ -86,6 +86,10 @@ header {
 		position: relative;
 		@media #{$mid-point} {
 			height: 100%;
+			&:hover {
+				border-bottom-color: rgba(255, 255, 255,.75);
+				border-bottom-width: 5px;
+			}
 		}
 		display: block;
 
