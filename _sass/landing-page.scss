@@ -58,6 +58,25 @@
 
 .quote {
 
+	color: #ffffff;
+	text-align: center;
+	height: 50vh;
+	min-height: 300px;
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	p {
+		color: #ffffff;
+	}
+
+	.inner-quote {
+		display: flex;
+		align-items: flex-start;
+		height: 100%;
+	}
+
 	.quote-text-container {
 		width: 800px;
 		text-align: center;
