@@ -141,6 +141,7 @@ header {
 	// background-color: #2c3435;
 	display: inline; 
 }
+
 .heading-landing{
 	/**margin-top: 10vh;**/
 	padding: 35px;	
@@ -151,6 +152,12 @@ header {
 
 .heading-landing h2{
 	margin-bottom: 5px;
+}
+
+.heading-landing-home{
+	.hero-title{
+		margin-bottom: 15px;
+	}
 }
 
 .bold-large-text {
