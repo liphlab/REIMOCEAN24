@@ -371,6 +371,26 @@ blockquote:before {
   margin-top:-10px;
 }
 
+table, th, td{
+	border: 1px solid;
+}
+
+table{
+	width: 100%;
+	padding: 0 20px;
+}
+
+tr:hover{
+	background-color: #242424;
+}
+
+th{
+	background-color: #2c3435bb;
+	color: #ffffff;
+	
+}
+
+
 // @media screen and (min-width: 768px) {
 //   .timeline {
 //     display: grid;
