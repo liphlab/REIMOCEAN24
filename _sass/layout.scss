@@ -377,6 +377,7 @@ table, th, td{
 
 td{
 	padding-left: 75px;
+	width: 23%;
 }
 
 table{
@@ -397,6 +398,11 @@ tr td:first-child{
 	color: #ffffff;
 	text-align: center;
 	padding-left: 0;
+	width: 10%;
+}
+
+tr th:first-child{ 
+	width: 11%;
 }
 
 
