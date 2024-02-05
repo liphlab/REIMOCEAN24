@@ -1,7 +1,7 @@
 - name: Home
   link: /
-- name: Registration
-  link: /registration/
+#- name: Registration
+#  link: /registration/
 - name: Attendees
   link: /attendees/
 - name: Program
