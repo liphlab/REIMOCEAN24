@@ -151,6 +151,9 @@ header {
 	padding: 35px;	
 	background-color: #2c3435bb;
 	border-radius: 25px;
+	overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 	/**border: 2px solid #000000;**/
 }
 
@@ -162,6 +165,9 @@ header {
 	padding: 35px;	
 	background-color: #2c3435bb;
 	border-radius: 25px;
+	overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 	.hero-title{
 		margin-bottom: 15px;
 	}
@@ -330,12 +336,50 @@ blockquote:before {
   border-radius: 6px;
 }
 
+.session-odd {
+  padding: 10px;
+  background: #ffcccb;
+  border-radius: 6px;
+  color: #000000;
+  overflow-wrap: break-word !important;
+  margin: 10px;
+  margin-bottom: 10px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+.session-even {
+  padding: 10px;
+  background: #d0a7a6;
+  border-radius: 6px;
+  color: #000000;
+  overflow-wrap: break-word !important;
+  margin: 10px;
+  margin-bottom: 10px;
+  border-color: #000000;
+  border-style: solid;	
+}
+
 .timeline-component {
   margin: 0px 20px 20px 20px;
 }
 .timeline-content h1{
 		font-size: 2rem;
 	  }
+
+.timeline-content h2{
+		font-size: 40px;
+		margin: 10px 0;
+		font-weight: bold;
+	  }
+
+.timeline-content h3{
+		font-size: 30px;
+		font-style: italic;
+		margin: 20px 0 25px 0;
+		font-weight: normal;
+	  }
+
 .timeline-component h4{
 	font-size: 1.5rem;
   }
@@ -371,53 +415,252 @@ blockquote:before {
   margin-top:-10px;
 }
 
-table, th, td{
-	border: 1px solid;
+/*************************
+ * GRID SCHEDULE LAYOUT
+ *************************/
+
+.schedule {
+
+	display: grid;
+    grid-gap: 1em;
+    grid-template-rows:
+      [tracks] auto
+	  [time-0900] 0
+      [time-0930] 1fr
+      [time-1000] 1fr
+      [time-1030] 1fr
+      [time-1100] 1fr
+      [time-1130] 1fr
+      [time-1200] 1fr
+	  [time-1230] 1fr
+      [time-1300] 1fr
+      [time-1330] 1fr
+      [time-1400] 1fr
+      [time-1430] 1fr
+      [time-1500] 1fr
+	  [time-1530] 1fr
+      [time-1600] 1fr
+      [time-1630] 1fr
+      [time-1700] 1fr
+      [time-1730] 1fr
+	  [time-1800] 1fr;
+
+ 	@media screen and (max-width: 700px) {
+	  display: flex;
+	  flex-direction: column;
+	  grid-template-columns: 1fr;
+	  grid-template-rows: 
+          [time-0900] 1fr;
+	}
+
 }
 
-td{
-	padding-left: 7.6%;
-	width: 23%;
+@media screen and (min-width: 700px) {
+  .schedule {
+      /* Note 1:
+      Use 24hr time for gridline names for simplicity
+
+      Note 2: Use "auto" instead of "1fr" for a more compact schedule where height of a slot is not proportional to the session length. Implementing a "compact" shortcode attribute might make sense for this!
+      Try 0.5fr for more compact equal rows. I don't quite understand how that works :)
+      */
+    
+    grid-template-columns:
+      [times] 4em
+      [track-1-start] 1fr
+      [track-1-end track-2-start] 1fr
+      [track-2-end track-3-start] 1fr
+	  [track-3-end];
+  }
 }
 
-table{
-	width: 80%;
-	font-size: 30px;
-	border-radius: 5px;
+.time-slot {
+  grid-column: times;
+  @media screen and (max-width: 700px) {
+	display: none;
+  }
 }
 
-td:hover{
-	background-color: #FCFBE9;
+.track-slot {
+  display: none; /* hidden on small screens and browsers without grid support */
 }
 
-th{
-	background-color: #2c3435bb;
-	color: #ffffff;
+@supports( display: grid ) {
+  @media screen and (min-width: 700px) {
+   .track-slot {
+      display: block;
+      padding: 10px 5px 5px;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255,255,255,.9);
+    }
+  }
 }
 
-tr td:first-child{ 
-	background-color: #2c3435bb;
-	color: #ffffff;
-	text-align: center;
-	padding-left: 0;
-	width: 10%;
+/* Small-screen & fallback styles */
+.session {
+  margin-bottom: 1em;
 }
 
-tr th:first-child{ 
-	width: 11%;
+@supports( display: grid ) {
+  @media screen and (min-width: 700px) {
+    .session {
+      margin: 0;
+    } 
+  }
 }
 
+/*************************
+ * VISUAL STYLES
+ * Design-y stuff ot particularly important to the demo
+ *************************/
 
-// @media screen and (min-width: 768px) {
-//   .timeline {
-//     display: grid;
-//     grid-template-columns: 1fr 3px 1fr;
-//   }
-//   .timeline-content h1{
-// 	font-size: 2rem;
-//   }
-//   .talk{
-// 	font-size: 0.8rem;
-//   }
-// }
+.session {
+  padding: .5em;
+  border-radius: 2px;
+  font-size: 24px;
+  box-shadow:
+    rgba(255,255,255,.6) 1px 1px 0,
+    rgba(0,0,0,.3) 4px 4px 0;
+}
 
+.session_dummy {
+  padding: .5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  @media screen and (min-width: 700px) {
+      display: none;
+  }
+  
+}
+
+.session-title,
+.session-time,
+.session-track,
+.session-presenter {
+  display: block;
+}
+
+.session-title,
+.time-slot {
+  margin: 0;
+  //font-size: 1.66em;
+}
+
+.session-title a {
+  color: #000;
+  text-decoration-style: dotted;
+  
+  &:hover {
+    font-style: italic;
+  }
+  
+  &:focus {
+    outline: 2px dotted rgba(255,255,255,.8);
+  }
+}
+
+.session-track a {
+  color: #000;
+  text-decoration-style: solid;
+  
+  /*&:hover {
+    font-style: italic;
+  }*/
+  
+  &:focus {
+    outline: 2px dotted rgba(255,255,255,.8);
+  }
+}
+
+.track-slot,
+.time-slot {
+  font-weight: bold;
+}
+
+.track-slot {
+  font-size: 1.5em
+}
+
+.time-slot {
+  font-size: 1.25em
+}
+
+.track-1 {
+  background-color: #ffcccb;
+  color: #000;
+}
+
+.track-2 {
+  background-color: #d0a7a6;
+  color: #000;
+}
+
+.track-3 {
+  background-color: #d0a7a6;
+  color: #000;
+}
+
+.track-4 {
+  background-color: #ffcccb;
+  color: #000;
+}
+
+.track-5 {
+  background-color: #ffcccb;
+  color: #000;
+}
+
+.track-all {
+  display: flex;
+  @media screen and (max-width: 700px) {
+      display: none;
+  }
+  justify-content: center;
+  align-items: center;
+  background: #ccc;
+  color: #000;
+  box-shadow: none;
+}
+
+.track-dummy {
+  background-color: #fff;
+  color: #000;
+}
+
+.track-break-dummy {
+  display: none;
+  @media screen and (max-width: 700px) {
+      display: flex;
+  }
+  justify-content: center;
+  align-items: center;
+  background: #ccc;
+  color: #000;
+  box-shadow: none;
+}
+
+.meta {
+  color: #555;
+  font-style: italic;
+}
+
+.meta a {
+  color: #555;
+}
+
+hr {
+  margin: 40px 0;
+}
+
+[id] {
+  scroll-padding-top: 500px; // 1
+  scroll-snap-type: y mandatory;
+  //overflow: scroll;
+}
+
+ @media screen and (max-width:700px){
+        #1{order:1;}
+        #2{order:2;}
+        #3{order:3;}
+        #4{order:4;}
+}
