@@ -426,9 +426,15 @@ blockquote:before {
     grid-template-rows:
       [tracks] auto
 	  [time-0900] 0
-      [time-0930] 1fr
-      [time-1000] 1fr
-      [time-1030] 1fr
+      [time-0930] 0.5fr
+	  [time-0940] 0.5fr
+	  [time-0950] 0.5fr
+      [time-1000] 0.5fr
+	  [time-1010] 0.5fr
+	  [time-1020] 0.5fr
+      [time-1030] 0.5fr
+	  [time-1040] 0.5fr
+	  [time-1050] 0.5fr
       [time-1100] 1fr
       [time-1130] 1fr
       [time-1200] auto//1fr
