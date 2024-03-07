@@ -360,6 +360,18 @@ blockquote:before {
   border-style: solid;	
 }
 
+.session-discussion {
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  color: #000000;
+  overflow-wrap: break-word !important;
+  margin: 10px;
+  margin-bottom: 10px;
+  border-color: #636363;
+  border-style: solid;	
+}
+
 .timeline-component {
   margin: 0px 20px 20px 20px;
 }
@@ -619,6 +631,8 @@ blockquote:before {
 .track-discussion {
   background-color: #fff;
   color: #000;
+  border-style: solid;
+  border-color: #636363;
 }
 
 .track-all {
