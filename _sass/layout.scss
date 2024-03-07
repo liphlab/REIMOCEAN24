@@ -437,8 +437,8 @@ blockquote:before {
 	  [time-1050] 0.5fr
       [time-1100] 1fr
       [time-1130] 1fr
-      [time-1200] auto//1fr
-	  [time-1230] auto//1fr
+      [time-1200] 1fr
+	  [time-1230] 1fr
       [time-1300] 1fr
       [time-1330] auto//1fr
       [time-1400] auto//1fr
@@ -613,6 +613,11 @@ blockquote:before {
 
 .track-5 {
   background-color: #ffcccb;
+  color: #000;
+}
+
+.track-discussion {
+  background-color: #fff;
   color: #000;
 }
 
