@@ -1,7 +1,7 @@
 ---
-name: Alejandro Martínez Abietar
-position: Universidad Politécnica de Valencia
-position3: Nanophotonics Technology Center
+name: Alejandro Martínez García
+position: Consiglio Nazionale delle Ricerche
+position3: Istituto di Ricerca Sulle Acque di Verbania
 image_path: /new_imgs/attendees/Martinez.jpg
-website: "https://www.upv.es/contenidos/MSCTELEC/info/869146normalc.html"
+website: "https://publications.cnr.it/authors/alejandro.martinezgarcia"
 ---
